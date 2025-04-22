@@ -1,18 +1,22 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Login = () => {
+const Login = ({HandleLogin}) => {
+
 
 const [email, setEmail] = useState('')
-const [Password, setPassword] = useState(' ')
+const [Password, setPassword] = useState('')
+
+
 
 const submitHandler = (e)=>{
 e.preventDefault()
+
 console.log("Email is: ", email)
 console.log("Password is: ", Password)
 
-setEmail('')
-setPassword('')
+setEmail("")
+setPassword("")
 
 }
   return (
@@ -39,7 +43,7 @@ setPassword('')
                 }}
                  required 
                  className='text-white outline-none bg-transparent border-2 border-emerald-600 text-xl px-5 py-1 rounded-full mt-3 placeholder:text-gray-400' type="password" placeholder='Enter your password'/>
-                <button className='text-white border-none outline-none border-2 bg-emerald-600 text-xl px-6 py-2 rounded-full mt-3 placeholder:text-white'>Login</button>
+                <button type='submit' onClick={() => HandleLogin(email, Password)}  className='text-white border-none outline-none border-2 bg-emerald-600 text-xl px-6 py-2 rounded-full mt-3 placeholder:text-white'>Login</button>
             </form>
         </div> 
     </div>
