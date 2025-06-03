@@ -7,7 +7,7 @@ const Login = ({ handleLogin }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         handleLogin(email, password)
-        setEmail('') // Clear email after login
+        setEmail('admin@me.com') // Clear email after login
         setPassword('') // Clear password after login
        
     }
